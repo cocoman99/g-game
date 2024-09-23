@@ -27,9 +27,11 @@ fn main() {
             Ordering::Less => println!("Too small"),
             Ordering::Greater => println!("Too big"),
             Ordering::Equal => {
-                println!("YOU WIN!");
+                println!("\nYOU WIN!");
                 break;
             }
         }
     }
+    println!("{}", "\nPress ENTER".to_string());
+    io::stdin().read_line(&mut String::new());
 }
