@@ -32,6 +32,6 @@ fn main() {
             }
         }
     }
-    println!("{}", "\nPress ENTER".to_string());
+    println!("\nPRESS ENTER");
     io::stdin().read_line(&mut String::new());
 }
