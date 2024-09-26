@@ -3,9 +3,11 @@ use rand::Rng;
 use std::cmp::Ordering;
 
 fn main() {
-    println!("+++ Guess THE Number +++");
+    println!("\n+ + +   G U E S S   T H E   N U M B E R   + + +\n");
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
+    let mut count = 0;
+    let prize = 1000000;
 
     loop {
         println!("Input your guess: ");
@@ -22,16 +24,19 @@ fn main() {
         };
             
         println!("YOU guessed: {}", guess);
+        count += 1;
 
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too small"),
             Ordering::Greater => println!("Too big"),
             Ordering::Equal => {
-                println!("\nYOU WIN!");
+                println!("\n\nTHE LUCKY NUMBER IS {}.", secret_number);                
                 break;
             }
         }
     }
-    println!("\nPRESS ENTER");
-    io::stdin().read_line(&mut String::new());
+    
+    println!("\nYOU WON AFTER {} TRIES AND YOUR PRIZE IS {} $$$$$$$", count, prize);
+    println!("\nPRESS ENTER TO EXIT");
+    let _ = io::stdin().read_line(&mut String::new());
 }
