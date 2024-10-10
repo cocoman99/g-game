@@ -30,13 +30,13 @@ fn main() {
             Ordering::Less => println!("Too small"),
             Ordering::Greater => println!("Too big"),
             Ordering::Equal => {
-                println!("\n\nTHE LUCKY NUMBER IS {}.", secret_number);                
+                println!("\n\nTHE LUCKY NUMBER IS {secret_number}.");                
                 break;
             }
         }
     }
     
-    println!("\nYOU WON AFTER {} TRIES AND YOUR PRIZE IS {} $$$$$$$", count, prize);
+    println!("\nYOU WON AFTER {count} TRIES AND YOUR PRIZE IS {prize} $$$$$$$");
     println!("\nPRESS ENTER TO EXIT");
     let _ = io::stdin().read_line(&mut String::new());
 }
